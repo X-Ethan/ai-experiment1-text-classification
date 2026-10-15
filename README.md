@@ -18,3 +18,11 @@ conda create -n project1 python=3.10 -y
 conda activate project1
 conda install numpy pandas scikit-learn -y
 python main.py
+```
+
+运行完成后会自动生成 `predictions.csv`（无表头，共 2457 条预测结果）。
+
+## 实验设置
+- 验证集比例：15%（分层抽样，随机种子 42）
+- TF-IDF：max_features=20000，ngram_range=(1,2)，英文停用词，sublinear_tf
+- 最终选择模型：LinearSVC (C=0.5)，验证集准确率 0.9421
